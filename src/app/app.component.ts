@@ -13,7 +13,7 @@ export class AppComponent {
     {'Gyu-Kaku':'https://www.yelp.com/biz/gyu-kaku-japanese-bbq-pasadena-pasadena-2?osq=Gyu-Kaku+Japanese+Bbq'},
      {'Chubby Cattle':'https://www.yelp.com/biz/chubby-cattle-monterey-park-monterey-park-2'},
       {'YAMASHIRO':'https://www.yelp.com/biz/yamashiro-hollywood-hollywood'}];
-  styles: object[] = [{'Suit':'../assets/wedding-suit.png'},{'Business':'../assets/polo-shirt.png'},{'Casual':'../assets/hoodie.png'}]
+  styles: object[] = [{'Suit':'assets/wedding-suit.png'},{'Business':'assets/polo-shirt.png'},{'Casual':'assets/hoodie.png'}]
   sendYes(){
     var hide = document.getElementById('panel');
     if(hide){
