@@ -1,0 +1,45 @@
+
+
+<div id="panel" style="display: block;">
+  <h1 style="text-align: center;"><span>Hello Honey!</span> <img src="../assets/honey.png" height="60px;" style=" vertical-align: middle ; margin-left: 5px;">  </h1>
+
+  <p style="text-align: center;">Are you free Feb 14th 2024?</p>
+  <div style="display: flex; justify-content: space-between;">
+    <button (click)="sendYes()" id="YesBtn">Yes</button>
+    <button id="NoBtn" (mouseenter)="handleHover()" (click)="displayText()">No</button>
+  </div>
+
+</div>
+<div style="text-align: center; display: none;" id="secondPhase">
+  <h1><span>Where would you like to eat?</span> <img src="../assets/bibimbap.png" height="80px" style="vertical-align: middle; margin-left: 5px;"></h1>
+  <div style="display: flex; flex-direction: column;">
+    <div *ngFor="let place of foodPlaces">
+    <div *ngFor="let p of place| keyvalue">
+    <button  *ngIf="p.key === 'YAMSHIRO'; else elseBlock"style="margin: 1rem;" id="styleBtns" (click)="sendPlaceConfirmation(p.key)">{{p.key}} (NEW SPOT!!)</button>
+    <ng-template #elseBlock>
+      <button  style="margin: 1rem;" id="styleBtns" (click)="sendPlaceConfirmation(p.key)">{{p.key}}</button>
+    </ng-template>
+    <img src="../assets/information.png" height="30px" (click)="openWindow(p.value)">
+    <!-- <a href="p.value"><img src="../assets/information.png" height="30px"></a> -->
+  </div>
+</div>
+  </div>
+</div>
+
+<div id="thirdPhase" style="display: none;">
+  <h1 style="text-align: center;">What A Great Choice You Picked!  </h1>
+  <h1 style="text-align: center;">I Would Love {{selectedPlace}} <img src="../assets/exclamation-mark.png" height="30px"><img src="../assets/exclamation-mark.png" height="30px"></h1>
+  <h1 style="text-align: center;"> How Would You Like Me To Dress?</h1>
+  <div style="display: flex; flex-direction: row; justify-content: center;">
+  <div *ngFor="let attire of styles" >
+   
+      <div *ngFor="let selection of attire|keyvalue"  id="card" >
+        <h2>{{selection.key}} </h2>
+        <img src="{{selection.value}}" height="100px">
+      </div>
+   
+    
+  </div>
+</div>
+</div>
+
